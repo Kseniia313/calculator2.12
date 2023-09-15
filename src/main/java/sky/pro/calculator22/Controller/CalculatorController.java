@@ -43,9 +43,7 @@ public class CalculatorController {
     @GetMapping(path = "/divide")
     public String divide(@RequestParam Integer num1,
                        @RequestParam Integer num2) {
-        if (num2 == 0) {
-            throw new ArithmeticException();
-        }
+
         return calculatorService.divide(num1, num2);
     }
 }
