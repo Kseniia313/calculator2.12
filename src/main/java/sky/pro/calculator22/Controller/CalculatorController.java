@@ -28,22 +28,26 @@ public class CalculatorController {
     @GetMapping(path = "/plus")
     public String plus(@RequestParam Integer num1,
                        @RequestParam Integer num2) {
-        return calculatorService.plus(num1, num2);
+        long sum = calculatorService.plus(num1, num2);
+       return num1 + "+" + num2 + "=" + sum;
     }
     @GetMapping(path = "/minus")
     public String minus(@RequestParam Integer num1,
                        @RequestParam Integer num2) {
-        return calculatorService.minus(num1, num2);
+        long minus = calculatorService.minus(num1, num2);
+        return num1 + "-" + num2 + "=" + minus;
     }
     @GetMapping(path = "/multiply")
     public String multilpy(@RequestParam Integer num1,
                        @RequestParam Integer num2) {
-        return calculatorService.multiply(num1, num2);
+        long multiply = calculatorService.multiply(num1, num2);
+        return num1 + "*" + num2 + "=" + multiply;
     }
     @GetMapping(path = "/divide")
     public String divide(@RequestParam Integer num1,
                        @RequestParam Integer num2) {
 
-        return calculatorService.divide(num1, num2);
+        double divide = calculatorService.divide(num1, num2);
+        return num1 + "/" + num2 + "=" + divide;
     }
 }
